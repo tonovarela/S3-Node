@@ -23,20 +23,20 @@ export const subirArchivo = async (bucketName,ubicacionArchivo,nombreArchivo) =>
         console.error(err);
     }
 };
-export const crearArchivo = async () => {
-    const command = new PutObjectCommand({
-        Bucket: "litobucket",
-        Key: "hello-s3.txt",
-        Body: "Hello S4!",
-    });
+// export const crearArchivo = async () => {
+//     const command = new PutObjectCommand({
+//         Bucket: "litobucket",
+//         Key: "hello-s3.txt",
+//         Body: "Hello S4!",
+//     });
 
-    try {
-        const response = await client.send(command);
-        console.log(response);
-    } catch (err) {
-        console.error(err);
-    }
-};
+//     try {
+//         const response = await client.send(command);
+//         console.log(response);
+//     } catch (err) {
+//         console.error(err);
+//     }
+// };
 export const listarArchivosEnBucket = async (nombreBucket) => {
     const command = new ListObjectsV2Command({
         Bucket: nombreBucket,        
